@@ -1,4 +1,4 @@
-# bad-notes
+# bad-notes ``[EM DESENVOLVIMENTO]``
 
 O que o script principal faz?
 
