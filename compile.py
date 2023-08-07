@@ -1,10 +1,21 @@
-import http.server
-import socketserver
+import markdown
+md = markdown.Markdown(extensions=['mdx_math'])
 
-PORT = 8000
+file_dir = "test"
 
-Handler = http.server.SimpleHTTPRequestHandler
+file = open(file_dir, "r")
+text = file.read()
+file.close()
 
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("Servindo em http://localhost:%4d" % PORT)
-    httpd.serve_forever()
+file_dir = file_dir + '.html'
+file = open(file_dir, "w")
+text = md.convert(text)
+
+template_file = open("template.html", "r")
+template = template_file.read()
+template_file.close()
+
+template.replace()
+
+file.write(text)
+file.close()
