@@ -15,10 +15,9 @@ def compile_file(file_dir):
     template_file.close()
 
     n = len(file_dir.split('/')) - 1
-
-    css_dir = "../"*n + "style.css"
+    directory = "../"*n
     
-    template = template.replace("{{css_dir}}", css_dir)
+    template = template.replace("{{dir}}", directory)
     template = template.replace("{{main}}", text)
 
     file.write(template)

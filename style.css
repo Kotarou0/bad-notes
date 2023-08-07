@@ -1,4 +1,7 @@
 body {
-	background-color: green;
+	background-color: black;
 	color: white;
+	font-size: 15pt;
+	border: solid white 1pt;
+	padding: 20pt 20pt;
 }
