@@ -13,12 +13,13 @@ class ManipuladorDeEventos(FileSystemEventHandler):
     def on_modified(self, event):
         if not event.is_directory:
             print(event.src_path + " modificado.")
-            compile(src_path)
+            if len(event.src_path.split('.')) == 1:
+                compile_file(event.src_path)
         self.catch_all_handler(event)
  
 eventos = ManipuladorDeEventos()
 observador = Observer()
-observador.schedule(eventos, "notes", recursive=False)
+observador.schedule(eventos, "notes", recursive=True)
 observador.start()
  
 try:

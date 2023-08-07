@@ -1,7 +1,7 @@
 import markdown
 md = markdown.Markdown()
 
-def compile(file_dir):
+def compile_file(file_dir):
     file = open(file_dir, "r")
     text = file.read()
     file.close()
@@ -14,7 +14,9 @@ def compile(file_dir):
     template = template_file.read()
     template_file.close()
 
-    css_dir = "style.css"
+    n = len(file_dir.split('/')) - 1
+
+    css_dir = "../"*n + "style.css"
     
     template = template.replace("{{css_dir}}", css_dir)
     template = template.replace("{{main}}", text)
