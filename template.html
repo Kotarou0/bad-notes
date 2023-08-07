@@ -3,7 +3,14 @@
 	<head>
 		<title>Ambiente</title>
 		<meta charset="UTF-8">
-		<script type='text/javascript' async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script>
+		MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$'], ['\\(', '\\)']]
+		  }
+		};
+		</script>
+		<script type='text/javascript' async src="/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
 		<script type='text/javascript' src="{{dir}}live.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{dir}}style.css">
 	</head>
