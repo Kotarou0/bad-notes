@@ -15,7 +15,10 @@ template_file = open("template.html", "r")
 template = template_file.read()
 template_file.close()
 
-template.replace()
+css_dir = "style.css"
 
-file.write(text)
+template = template.replace("{{css_dir}}", css_dir)
+template = template.replace("{{main}}", text)
+
+file.write(template)
 file.close()
