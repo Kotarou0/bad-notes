@@ -1,6 +1,6 @@
-# bad-notes ``[EM DESENVOLVIMENTO]``
+# bad-notes
 
-O que o script principal faz?
+O que os scripts fazem?
 
 1. Inicia um servidor local com `http.server` do Python;
 2. Converte arquivos modificados em texto de Markdown + LaTeX para HTML + MathJax usando a biblioteca Markdown e a extensão pytjon-markdown-math;
