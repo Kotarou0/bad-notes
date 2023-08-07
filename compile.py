@@ -1,24 +1,24 @@
 import markdown
-md = markdown.Markdown(extensions=['mdx_math'])
+md = markdown.Markdown()
 
-file_dir = "test"
+def compile(file_dir):
+    file = open(file_dir, "r")
+    text = file.read()
+    file.close()
+    
+    file_dir = file_dir + '.html'
+    file = open(file_dir, "w")
+    text = md.convert(text)
 
-file = open(file_dir, "r")
-text = file.read()
-file.close()
+    template_file = open("template.html", "r")
+    template = template_file.read()
+    template_file.close()
 
-file_dir = file_dir + '.html'
-file = open(file_dir, "w")
-text = md.convert(text)
+    css_dir = "style.css"
+    
+    template = template.replace("{{css_dir}}", css_dir)
+    template = template.replace("{{main}}", text)
 
-template_file = open("template.html", "r")
-template = template_file.read()
-template_file.close()
-
-css_dir = "style.css"
-
-template = template.replace("{{css_dir}}", css_dir)
-template = template.replace("{{main}}", text)
-
-file.write(template)
-file.close()
+    file.write(template)
+    file.close()
+    print(file_dir + " compilado")
