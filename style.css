@@ -2,6 +2,38 @@ body {
 	background-color: black;
 	color: white;
 	font-size: 15pt;
-	border: solid white 1pt;
+	border: solid palevioletred 1pt;
 	padding: 20pt 20pt;
+}
+
+footer {
+	text-align: right;
+}
+
+h1,h2 {
+	border-bottom: solid white 1pt;
+}
+
+h1 {
+	color: lightcoral;
+}
+
+h2 {
+	color: pink;
+}
+
+h3, h4, h5 {
+	color: pink;
+}
+
+p {
+	text-indent: 30pt;
+}
+
+a {
+	color: aquamarine;
+}
+
+ul {
+	list-style-type: square;
 }
